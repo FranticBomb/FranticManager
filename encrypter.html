@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>FranticManager | Home</title>
+    <script src="encrypt.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ul class="sticky" class="nav-list">
+        <li><a class="nav-links" href="index.html">Home</a></li>
+        <li><a class="nav-links" href="about.html">About</a></li>
+        <li><a class="active" class="nav-links"href="encrypter.html">Encrypter</a></li>
+        <li><a class="nav-links"href="stringgen.html">Random String Creator</a></li>
+      </ul>
+    </nav>
+    <br>
+    <div class="info">
+      <h1 align="center">Guide</h1>
+        <p align="center">If encrypting choose a encryption key (You need this to decrypt) and type the text you want to encrypt and press encrypt</p><br>
+        <p align="center">If decrypting type the encryption key type the encrypted text and press decrypt</p>
+    </div>
+    <div class="center top-relative">
+        <div class="content voilet1">
+            <span>Enter Password for Encryption</span>
+            <input class="f15pt" type="password" id="passcode" placeholder="Password" />
+        </div>
+        <div class="content voilet2">
+            <span>Put Or Type Text Here</span>
+            <textarea id="originalContent"></textarea>
+        </div>
+        <div class="content voilet0">
+            <span>Encrypted Form</span>
+            <textarea id="encryptedContent" readonly></textarea>
+        </div>
+        <div class="content voilet0">
+            <span>Decrypted Form</span>
+            <textarea id="decryptedContent" readonly></textarea>
+        </div>
+        <button class="encrypt" onclick="webdevencrypt.setEncrypt('originalContent','encryptedContent','passcode')">Encrypt</button>
+        <button class="encrypt" onclick="webdevencrypt.setDecrypt('originalContent','decryptedContent','passcode')">Decrypt</button>
+    </div>
+
+  </body>
+</html>

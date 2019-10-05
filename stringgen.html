@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>FranticManager | Home</title>
+    <script language="JavaScript" src="script.js"></script>
+    <script language="JavaScript">
+
+  		function generateRandSeq(len, letters)
+ 		// Assumes: len >= 0
+  		// Returns: random sequence of letters, length len
+ 		{
+      		var i, seq = "";
+      		for (i = 1; i <= len; i = i + 1) {
+          	seq += randomChar(letters);
+      		}
+      		return seq;
+  		}
+      </script>
+  </head>
+  <body>
+    <nav>
+      <ul class="sticky" class="nav-list">
+        <li><a class="nav-links"href="index.html">Home</a></li>
+        <li><a class="nav-links"href="about.html">About</a></li>
+        <li><a class="nav-links"href="encrypter.html">Encrypter</a></li>
+        <li><a class="active" class="nav-links"href="stringgen.html">Random String Creator</a></li>
+      </ul>
+    </nav>
+    <br>
+      <div class="info">
+        <h1 align="center">Guide</h1>
+        <p align="center"> Write amount of strings, amount of letters per string and what letters (or numbers) to include and press generate</p>
+      </div>
+      <form name="generator">
+
+		<table>
+
+			<tbody>
+
+			<tr>
+
+				<td align="left">Number of random letter sequences to generate </td>
+
+				<td>
+
+					<input type="text" name="numSeq" size="4" value="1">
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td align="left">Lenght of each random letter sequence:</td>
+
+				<td>
+
+					<input type="text" name="lenSeq" size="4" value="3">
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td align="left">Letters to choose from:</td>
+
+				<td>
+
+					<input type="text" name="letters" size="26" value="abcdefghijklmnopqrstuvwxyz"
+
+				</td>
+
+			</tr>
+
+			</tbody>
+
+		</table>
+
+		<p>
+
+			<input type="button" value="Generate" onclick="document.generator.output.value = '';
+                for(i=1;i<=document.generator.numSeq.value;i=i+1) {
+                  document.generator.output.value +=
+                        generateRandSeq(document.generator.lenSeq.value,
+                                        document.generator.letters.value) + ' ';
+                };"
+
+		</p>
+
+		<p>
+			<textarea class="textarea1" name="output" rows="5" cols="10">
